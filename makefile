@@ -56,23 +56,23 @@ SRC = $(FILE_DIR)/bmp_maker.c	\
 	$(FILE_DIR)/testing_utils.c		\
 	$(FILE_DIR)/verify_int_map.c		\
 
-CC = gcc
+CC = clang
 
-LIB_MAKER = Make -C
+LIB_MAKER = make -C
 
 OBJS = $(patsubst %.c, %.o,$(SRC))
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(LIB_MAKER) $(LIB_DIR)
-	$(LIB_MAKER) minilibx_opengl_20191021
-	gcc -Lminilibx_opengl_20191021 -lmlx -I minilibx_opengl_20191021 -framework OpenGL -framework appkit -Llibft -lft $(OBJS) -o $(NAME)
+	$(LIB_MAKER) mlx
+	clang -Lmlx -I mlx -I srcs -lmlx -Llibft -lft $(OBJS) -o $(NAME)
 
 clean: 
 	$(LIB_MAKER) $(LIB_DIR) clean

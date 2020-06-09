@@ -43,9 +43,9 @@ SRC = $(FILE_DIR)/arg_parser.c	\
 	$(FILE_DIR)/master_utils_nobuf.c \
 	$(FILE_DIR)/prec_reduce.c \
 
-CC = gcc
+CC = clang
 
-LIB_MAKER = Make -C
+LIB_MAKER = make -C
 
 OBJS = $(patsubst %.c, %.o,$(SRC))
 
@@ -54,7 +54,7 @@ OBJS = $(patsubst %.c, %.o,$(SRC))
 
 OBJ_LIB = $(LIB_FILES:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall
 
 all: $(NAME)
 

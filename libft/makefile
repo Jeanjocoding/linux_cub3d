@@ -18,27 +18,27 @@ INCLUDES = includes/libft.h
 
 OBJS = $(patsubst %.c, %.o,$(SRC))
 
-CC = gcc
+CC = clang
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	Make -C ft_printf
+	make -C ft_printf
 	cp ft_printf/libftprintf.a $(NAME)
 	ar rc $(NAME) $(OBJS) 
 	ranlib $(NAME)
 
 clean: 
-	Make -C ft_printf clean
+	make -C ft_printf clean
 	/bin/rm -f $(OBJS)
 
 fclean: clean
-	Make -C ft_printf fclean
+	make -C ft_printf fclean
 	/bin/rm -f $(NAME)
 
 re: fclean all
