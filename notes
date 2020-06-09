@@ -1,0 +1,23 @@
+image a l'envers?
+
+A free:
+-tex_list
+-texpointer
+-textures : tabs + int ptrs
+-WorldMap
+-sprites;
+
+A FAIRE:
+-makefile
+-normer, optimiser, simplifier
+-vérifier que textures coorespondent bien a leur pt cardinal
+-resize res
+(fonctions erreur?)
+
+
+POSSIBILITÉ OPTI:
+-ne pas recréer une image a chaque fois
+
+
+QUE FAIRE DU FICHIER KEYS?
+PRENDRE SPRITES SYMÉTRIQUES POUR QU'INVERSION NE SE VOIE PAS
