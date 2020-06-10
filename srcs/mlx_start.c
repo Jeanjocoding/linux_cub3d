@@ -22,7 +22,7 @@ extern char		**g_tex_tab;
 extern t_data	g_tex_list;
 int				g_ground;
 int				g_ceiling;
-extern int		g_keytab[400];
+extern int		g_keytab[100000];
 
 int			free_all(t_vars *vars)
 {
@@ -97,7 +97,7 @@ int			main(int ac, char **av)
 	if (ac < 2 || ac > 3)
 		error_quit("USAGE: PRGRM_NAME MAP_FILE [--save]", NULL);
 	parse_map_init(&vars, av[1]);
-	intarray_set(g_keytab, 0, 400);
+	intarray_set(g_keytab, 0, 100000);
 	if (ac > 2 && ft_strcmp(av[2], "--save") == 0)
 	{
 		if ((generate_bmp(&vars, &vars.img)) == -1)

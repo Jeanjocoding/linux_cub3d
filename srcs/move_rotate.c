@@ -16,21 +16,21 @@
 extern int	**g_worldmap;
 extern int	g_screenheight;
 extern int	g_screenwidth;
-int			g_keytab[400];
+int			g_keytab[100000];
 
 int	apply_command(t_vars *vars)
 {
-	if (g_keytab[KEY_W] == 1)
+	if (g_keytab[KEY_UP] == 1)
 		move_forward(&(vars->fov));
-	if (g_keytab[KEY_S] == 1)
+	if (g_keytab[KEY_DOWN] == 1)
 		move_backward(&(vars->fov));
-	if (g_keytab[KEY_D] == 1)
-		move_right(&(vars->fov));
-	if (g_keytab[KEY_A] == 1)
-		move_left(&(vars->fov));
-	if (g_keytab[KEY_LEFT] == 1)
-		rotate_left(&(vars->fov));
 	if (g_keytab[KEY_RIGHT] == 1)
+		move_right(&(vars->fov));
+	if (g_keytab[KEY_LEFT] == 1)
+		move_left(&(vars->fov));
+	if (g_keytab[KEY_ARROW_LEFT] == 1)
+		rotate_left(&(vars->fov));
+	if (g_keytab[KEY_ARROW_RIGHT] == 1)
 		rotate_right(&(vars->fov));
 	if (g_keytab[KEY_ESCAPE] == 1)
 		close_window(vars);

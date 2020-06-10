@@ -63,7 +63,7 @@ LIB_MAKER = make -C
 OBJS = $(patsubst %.c, %.o,$(SRC))
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) -c $< -o $@ $(FLAGS)
 
 FLAGS = -Wall -Wextra
 
@@ -72,7 +72,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(LIB_MAKER) $(LIB_DIR)
 	$(LIB_MAKER) mlx
-	clang -Lmlx -I mlx -I srcs -lmlx -Llibft -lft $(OBJS) -o $(NAME)
+	clang -o $(NAME) -I srcs  $(OBJS) -Lmlx -lmlx -Llibft -lft -lm -lbsd -lX11 -lXext
 
 clean: 
 	$(LIB_MAKER) $(LIB_DIR) clean
