@@ -23,6 +23,7 @@ extern t_data	g_tex_list;
 int				g_ground;
 int				g_ceiling;
 extern int		g_keytab[100000];
+void			*g_mlx_ptr;
 
 int			free_all(t_vars *vars)
 {
@@ -69,6 +70,8 @@ int			parse_map_init(t_vars *vars, char *map_file)
 	t_sprites	*sprlist;
 
 	sprlist = NULL;
+	vars->mlx = mlx_init();
+	g_mlx_ptr = vars->mlx;
 	check_cub(map_file);
 	if ((fd = open(map_file, O_RDONLY)) == -1)
 		error_quit("Error : unable to open map file", NULL);

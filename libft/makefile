@@ -23,7 +23,7 @@ CC = clang
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-FLAGS = -Wall
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 

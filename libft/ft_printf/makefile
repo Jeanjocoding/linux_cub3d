@@ -54,7 +54,7 @@ OBJS = $(patsubst %.c, %.o,$(SRC))
 
 OBJ_LIB = $(LIB_FILES:.c=.o)
 
-FLAGS = -Wall
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 

@@ -68,6 +68,5 @@ int		init_tex(char **tab, void *mlx, t_data *g_tex_list, t_vars *vars)
 			return (-1);
 		i++;
 	}
-	g_textures[4] = 0;
 	return (1);
 }

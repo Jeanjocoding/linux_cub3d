@@ -65,7 +65,7 @@ OBJS = $(patsubst %.c, %.o,$(SRC))
 %.o: %.c
 	$(CC) -c $< -o $@ $(FLAGS)
 
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 

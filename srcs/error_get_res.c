@@ -16,6 +16,7 @@ extern char	**g_tex_tab;
 extern int	g_screenheight;
 extern int	g_screenwidth;
 extern int	**g_worldmap;
+extern void	*g_mlx_ptr;
 
 int		check_all_digit(char *str)
 {
@@ -39,6 +40,11 @@ int		error_quit(char *msg, char ***tab)
 
 int		get_res(char ***tab)
 {
+	int sizex;
+	int sizey;
+
+	sizex = 0;
+	sizey = 0;
 	if (check_all_digit((*tab)[1]) == -1
 		|| check_all_digit((*tab)[2]) == -1
 		|| ft_tablen(*tab) != 3)
@@ -46,8 +52,13 @@ int		get_res(char ***tab)
 		custom_freetab(&g_tex_tab);
 		error_quit("error: invalid resolution format", tab);
 	}
+	mlx_get_screen_size(g_mlx_ptr, &sizex, &sizey);
 	g_screenwidth = ft_atoi((*tab)[1]);
 	g_screenheight = ft_atoi((*tab)[2]);
+	if (g_screenwidth > sizex)
+		g_screenwidth = sizex;
+	if (g_screenheight > sizey)
+		g_screenheight = sizey;
 	ft_freetab(tab);
 	return (1);
 }

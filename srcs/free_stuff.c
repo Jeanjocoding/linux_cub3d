@@ -24,7 +24,9 @@ void	free_tex_list(t_data *list, t_vars *vars)
 	t_data	*temp;
 	int		i;
 
-	i = 1;
+	i = 0;
+	vars->mlx++; 
+	vars->mlx--; 
 	list = list->first;
 	list = list->next;
 	while (i < 5)
@@ -32,13 +34,12 @@ void	free_tex_list(t_data *list, t_vars *vars)
 		if (list == NULL || list->img == NULL)
 			break ;
 		temp = list->next;
-		mlx_destroy_image(vars->mlx, list->img);
+		if (list->img != NULL && i != 4)
+			mlx_destroy_image(vars->mlx, list->img);
 		free(list);
 		list = temp;
 		i++;
 	}
-	if (list)
-		free(list);
 }
 
 int		free_all_parse_fail(char ***tab)
