@@ -6,7 +6,7 @@
 /*   By: tlucille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 14:47:30 by tlucille          #+#    #+#             */
-/*   Updated: 2019/05/22 15:22:29 by tlucille         ###   ########.fr       */
+/*   Updated: 2020/06/11 16:15:53 by tlucille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,6 @@ void			ft_freetab(char ***tab);
 char			*ft_strextract(char const *s, char c, unsigned int index);
 void			ft_putnbrnl(int nb);
 int				get_next_line(const int fd, char **line);
-int                             ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 
 #endif

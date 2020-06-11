@@ -6,7 +6,7 @@
 /*   By: tlucille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 11:52:33 by tlucille          #+#    #+#             */
-/*   Updated: 2020/06/09 11:52:35 by tlucille         ###   ########.fr       */
+/*   Updated: 2020/06/11 16:12:03 by tlucille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	free_tex_list(t_data *list, t_vars *vars)
 	int		i;
 
 	i = 0;
-	vars->mlx++; 
-	vars->mlx--; 
+	vars->mlx++;
+	vars->mlx--;
 	list = list->first;
 	list = list->next;
 	while (i < 5)
