@@ -58,7 +58,6 @@ t_data		generate_image(t_vars *vars, t_data *img)
 			&img->line_length, &img->endian);
 	get_sprite_distance(vars->sprite_list, &vars->fov);
 	vars->sprite_list = sort_sprites(vars->sprite_list);
-	mlx_clear_window(vars->mlx, vars->win);
 	put_tex(vars, img, &g_tex_list);
 	put_sprites(vars, vars->sprite_list, &g_tex_list, img);
 	return (*img);

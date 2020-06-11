@@ -53,7 +53,6 @@ SRC = $(FILE_DIR)/bmp_maker.c	\
 	$(FILE_DIR)/rotate.c		\
 	$(FILE_DIR)/set_fov.c		\
 	$(FILE_DIR)/sort_sprites.c		\
-	$(FILE_DIR)/testing_utils.c		\
 	$(FILE_DIR)/verify_int_map.c		\
 
 CC = clang

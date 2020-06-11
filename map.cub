@@ -1,4 +1,4 @@
-R 3000 8000
+R 600 800
 NO ./textures/mossy.xpm
 SO ./textures/redbrick.xpm
 WE ./textures/eagle.xpm
